@@ -1,0 +1,653 @@
+/*!
+Theme Name: Inbio
+Theme URI: http://rainbowit.net/themes/inbio/
+Author: Rainbow-Themes
+Author URI: https://themeforest.net/user/rainbow-themes/portfolio
+Description: Smart, Powerful, and Unlimited Customizable WordPress Theme for any type of Personal Website.
+Version: 2.3.0
+Tested up to: 6.0.2
+Requires PHP: 5.6
+License: Envato Marketplaces Split License
+License URI: https://themeforest.net/licenses/standard
+Text Domain: inbio
+Tags: responsive, rtl-language-support, blog, portfolio, resume, vcard, custom-colors, live-editor
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+inbio is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+    clear: both;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+    display: block;
+}
+
+/* .post,
+.page {
+	margin: 0 0 1.5em;
+} */
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+    display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+/*-------------------------------------
+	Admin Bar 
+------------------------------------*/
+@media only screen and (min-width: 779px) {
+
+    body.admin-bar header.inbio-header.header-sticky.sticky,
+    body.admin-bar .popup-mobile-manu {
+        top: 32px
+    }
+}
+
+@media only screen and (max-width: 779px) and (min-width: 601px) {
+    body.admin-bar header.inbio-header.header-sticky.sticky {
+        top: 46px
+    }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 779px) {
+    body.admin-bar .popup-mobile-manu {
+        top: 0
+    }
+}
+
+@media only screen and (max-width: 779px) and (min-width: 601px) {
+    body.admin-bar .popup-mobile-manu {
+        top: 0
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body.admin-bar .popup-mobile-manu {
+        top: 0
+    }
+}
+
+/*-- Preloader --*/
+#preloader {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+}
+
+
+/* Text Loading */
+.text-loading .button-text {
+    position: relative;
+}
+
+.text-loading .button-text::after {
+    content: " Please wait... ";
+    display: block;
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    width: 100%;
+    font-size: 17px;
+    color: #666666;
+    font-weight: normal;
+    text-transform: none;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: .65;
+}
+
+
+/* Custom Code */
+.content-block.thumb-border-rounded .post-thumbnail a img {
+    border-radius: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    min-height: 250px;
+    object-fit: cover;
+}
+
+.inbio-trending-post-area .trend-post .post-content {
+    width: 100%;
+}
+
+/* Caregory widget */
+.list-categories .single-cat .inner {
+    min-height: 180px;
+    width: 100%;
+    background: var(--color-primary);
+}
+
+.list-categories .single-cat .thumbnail img {
+    width: 100%;
+    min-height: 180px;
+    object-fit: cover;
+}
+
+.post-thumbnail a img {
+    object-fit: cover;
+}
+
+/* Social Networks */
+ul.social-with-text li:hover a i {
+    color: var(--color-white);
+}
+
+
+/* Creative Slider */
+.inbio-slide.slider-style-3 .content-block {
+    display: flex;
+}
+
+/* Audio Post */
+.inbio-post-details audio {
+    display: block;
+    width: 100%;
+}
+
+.ads-container > a {
+    display: inline-block;
+}
+
+
+.vertical-tab-with-post-area {
+    display: flex;
+    margin: 0;
+}
+
+.inbio-vertical-nav {
+    min-width: 279px;
+    width: auto;
+    border-right: 1px solid #CED0D4;
+    padding: 30px;
+}
+
+.inbio-vertical-nav-content {
+    width: 83.589%;
+    padding: 30px;
+}
+
+
+/* Elementor */
+/*.elementor-section.elementor-section-boxed > .elementor-container {
+	max-width: 1320px !important;
+}
+
+@media (max-width: 1199px) {
+	.elementor-section.elementor-section-boxed > .elementor-container {
+		max-width: 960px !important;
+	}
+}
+@media (max-width: 991px) {
+	.elementor-section.elementor-section-boxed > .elementor-container {
+		max-width: 720px !important;
+	}
+}
+@media (max-width: 1199px) {
+	.elementor-section-full_width .elementor-container {
+		max-width: 100% !important;
+	}
+}
+@media (max-width: 991px) {
+	.elementor-section-full_width .elementor-container {
+		max-width: 100% !important;
+	}
+}
+@media (max-width: 1199px) {
+	.container-fluid,
+	.custom-fluid-container {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media (max-width: 991px) {
+	.container-fluid,
+	.custom-fluid-container {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+*/
+
+
+.skill-style-1 li img {
+
+    width: auto;
+}
+
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0 !important;
+}
+
+
+.box-shadow {
+    box-shadow: var(--shadow-1);
+    border-radius: 10px;
+}
+
+.white-version .box-shadow {
+    background: var(--gradient-box-w);
+    box-shadow: var(--shadow-white-3);
+    border-radius: 10px;
+}
+
+
+.no_has_Shadow li {
+    box-shadow: none !important;
+}
+
+.no_has_Shadow li a {
+    box-shadow: none !important;
+}
+
+.footer-style-2.footer-style-3 .menu-wrapper {
+    margin-left: 0;
+}
+
+.left-header-style #sideNavs .primary-menu li a svg {
+
+    stroke: #fff;
+}
+
+
+
+.header-wrapper {
+
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+}
+
+/* .rainbow-sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+
+    background-color: #212428de;
+    box-shadow: var(--shadow-1);
+    position: fixed;
+    backdrop-filter: blur(15px);
+
+    -webkit-animation: headerSlideDown .8s ease forwards;
+    animation: headerSlideDown .8s ease forwards;
+} */
+
+
+body .header-wrapper {
+    height: auto;
+
+}
+
+
+.rainbow-title-3.elementor-widget-rainbow-title,
+.rainbow-title-3.elementor-widget-rainbow-title > .elementor-widget-container {
+    height: 100%;
+}
+
+
+.mainmenu-nav .primary-menu li.current a {
+    opacity: 1 !important;
+    color: var(--color-white);
+}
+
+.rainbow-separator {
+    padding: 5px 0;
+}
+
+.divider-separator {
+    background: #121415;
+    height: 1px;
+    display: inline-block;
+}
+
+.white-version .divider-separator {
+    background: #dce1e4;
+    height: 1px;
+}
+
+.dark-version .divider-separator {
+    background: #121415;
+    height: 1px;
+}
+
+
+body.dark-version .logo .dark-logo {
+    display: none;
+
+}
+
+body.white-version .logo .light-logo {
+    display: none;
+
+}
+
+body #sideNav {
+    height: inherit;
+}
+
+.contact-about-area .description {
+    margin-bottom: 30px;
+}
+
+.rn-header.header--fixed.rainbow-sticky {
+    display: block;
+}
+
+body.single .breadcrumb-style-one .breadcrumb-inner {
+    justify-content: center;
+}
+
+body.single .breadcrumb-style-one {
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
